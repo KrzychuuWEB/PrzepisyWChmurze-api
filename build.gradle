@@ -1,11 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.3'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
-
-group = 'pl.przepisywchmurze'
-version = '0.0.1-SNAPSHOT'
 
 java {
 	toolchain {
@@ -13,14 +9,27 @@ java {
 	}
 }
 
-repositories {
-	mavenCentral()
+allprojects {
+	group = 'pl.przepisywchmurze'
+	version = '0.0.1-SNAPSHOT'
+
+	repositories {
+		mavenCentral()
+	}
 }
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+subprojects {
+	apply plugin: 'java'
+
+	dependencies {
+		testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.4'
+		testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.11.4'
+		testImplementation 'org.assertj:assertj-core:3.27.3'
+	}
+
+	tasks.withType(Test).configureEach {
+		useJUnitPlatform()
+	}
 }
 
 tasks.named('test') {

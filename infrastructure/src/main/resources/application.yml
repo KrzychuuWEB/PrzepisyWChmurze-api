@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: cookingbook-api
+  liquibase:
+    change-log: classpath:db/changelog-master.xml
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
