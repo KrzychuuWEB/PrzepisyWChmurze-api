@@ -1,4 +1,14 @@
 package pl.przepisywchmurze.recipe;
 
-class RecipeSnapshot {
+import pl.przepisywchmurze.recipe.vo.*;
+
+record RecipeSnapshot(
+        RecipeId recipeId,
+        RecipeSlug slug,
+        Title title,
+        Description description,
+        RecipeServings servings,
+        RecipePrepTime prepTime,
+        RecipeCookTime cookTime
+) {
 }

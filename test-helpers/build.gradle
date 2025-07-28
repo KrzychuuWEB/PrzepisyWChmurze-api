@@ -1,0 +1,9 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':application')
+    implementation 'net.datafaker:datafaker:2.0.2'
+}
