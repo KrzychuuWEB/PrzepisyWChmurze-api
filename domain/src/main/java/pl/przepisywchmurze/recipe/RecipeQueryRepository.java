@@ -4,5 +4,7 @@ import pl.przepisywchmurze.recipe.vo.RecipeSlug;
 
 interface RecipeQueryRepository {
 
-    Recipe getBySlug(final RecipeSlug recipeSlug);
+    Recipe getBySlug(final RecipeSlug slug);
+
+    boolean existsBySlug(final RecipeSlug slug);
 }
