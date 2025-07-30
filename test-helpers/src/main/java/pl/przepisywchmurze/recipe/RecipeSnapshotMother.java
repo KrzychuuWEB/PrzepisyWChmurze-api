@@ -3,14 +3,11 @@ package pl.przepisywchmurze.recipe;
 import net.datafaker.Faker;
 import pl.przepisywchmurze.recipe.vo.*;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 public final class RecipeSnapshotMother {
 
-    private static final AtomicLong idSequence = new AtomicLong(1);
     private static final Faker faker = new Faker();
 
-    public static final RecipeId DEFAULT_RECIPE_ID = new RecipeId(idSequence.getAndIncrement());
+    public static final RecipeId DEFAULT_RECIPE_ID = new RecipeId(1L);
     public static final RecipeSlug DEFAULT_SLUG = new RecipeSlug("example-slug");
     public static final Title DEFAULT_TITLE = new Title(faker.food().dish());
     public static final Description DEFAULT_DESCRIPTION = new Description(faker.food().measurement());

@@ -7,6 +7,7 @@ dependencies {
     implementation 'jakarta.validation:jakarta.validation-api:3.1.1'
     testImplementation 'org.mockito:mockito-inline:5.2.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.15.2'
+    testImplementation project(':test-helpers')
 }
 
 test {
